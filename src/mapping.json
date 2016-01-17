@@ -16,23 +16,23 @@
       {"id": "rightStick", "prop": "y"}
     ],
     "buttons": [
-      "A/cross",
-      "B/circle",
-      "X/square",
-      "Y/triangle",
+      "face-bottom",
+      "face-right",
+      "face-left",
+      "face-top",
       "left-shoulder",
       "right-shoulder",
       "left-trigger",
       "right-trigger",
-      "select/back",
-      "start/forward",
+      "select-back",
+      "start-forward",
       "left-stick-button",
       "right-stick-button",
       "up",
       "down",
       "left",
       "right",
-      "power"
+      "home"
     ]
   },
   "45e-28e-Xbox 360 Wired Controller-": {
@@ -50,17 +50,17 @@
       "down",
       "left",
       "right",
-      "start/forward",
-      "select/back",
+      "start-forward",
+      "select-back",
       "left-stick-button",
       "right-stick-button",
       "left-shoulder",
       "right-shoulder",
-      "power",
-      "A/cross",
-      "B/circle",
-      "X/square",
-      "Y/triangle"
+      "home",
+      "face-bottom",
+      "face-right",
+      "face-left",
+      "face-top"
     ]
   },
   "standard": {
@@ -72,23 +72,23 @@
       {"id": "rightStick", "prop": "y"}
     ],
     "buttons": [
-      "A/cross",
-      "B/circle",
-      "X/square",
-      "Y/triangle",
+      "face-bottom",
+      "face-right",
+      "face-left",
+      "face-top",
       "left-shoulder",
       "right-shoulder",
       "left-trigger",
       "right-trigger",
-      "select/back",
-      "start/forward",
+      "select-back",
+      "start-forward",
       "left-stick-button",
       "right-stick-button",
       "up",
       "down",
       "left",
       "right",
-      "power"
+      "home"
     ]
   }
 }
