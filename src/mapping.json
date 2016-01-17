@@ -1,0 +1,94 @@
+{
+  "deadZones": {
+    "Xbox 360 Wired Controller": {
+      "leftStick": 0.24,
+      "rightStick": 0.27,
+      "leftTrigger": 0.12,
+      "rightTrigger": 0.12
+    }
+  },
+  "Xbox 360 Wired Controller (STANDARD GAMEPAD Vendor: 045e Product: 028e)-standard": {
+    "deadZone": "Xbox 360 Wired Controller",
+    "axes": [
+      {"id": "leftStick", "prop": "x"},
+      {"id": "leftStick", "prop": "y"},
+      {"id": "rightStick", "prop": "x"},
+      {"id": "rightStick", "prop": "y"}
+    ],
+    "buttons": [
+      "A/cross",
+      "B/circle",
+      "X/square",
+      "Y/triangle",
+      "left-shoulder",
+      "right-shoulder",
+      "left-trigger",
+      "right-trigger",
+      "select/back",
+      "start/forward",
+      "left-stick-button",
+      "right-stick-button",
+      "up",
+      "down",
+      "left",
+      "right",
+      "power"
+    ]
+  },
+  "45e-28e-Xbox 360 Wired Controller-": {
+    "deadZone": "Xbox 360 Wired Controller",
+    "axes": [
+      {"id": "leftStick", "prop": "x"},
+      {"id": "leftStick", "prop": "y"},
+      {"id": "leftTrigger"},
+      {"id": "rightStick", "prop": "x"},
+      {"id": "rightStick", "prop": "y"},
+      {"id": "rightTrigger"}
+    ],
+    "buttons": [
+      "up",
+      "down",
+      "left",
+      "right",
+      "start/forward",
+      "select/back",
+      "left-stick-button",
+      "right-stick-button",
+      "left-shoulder",
+      "right-shoulder",
+      "power",
+      "A/cross",
+      "B/circle",
+      "X/square",
+      "Y/triangle"
+    ]
+  },
+  "standard": {
+    "deadZone": "Xbox 360 Wired Controller",
+    "axes": [
+      {"id": "leftStick", "prop": "x"},
+      {"id": "leftStick", "prop": "y"},
+      {"id": "rightStick", "prop": "x"},
+      {"id": "rightStick", "prop": "y"}
+    ],
+    "buttons": [
+      "A/cross",
+      "B/circle",
+      "X/square",
+      "Y/triangle",
+      "left-shoulder",
+      "right-shoulder",
+      "left-trigger",
+      "right-trigger",
+      "select/back",
+      "start/forward",
+      "left-stick-button",
+      "right-stick-button",
+      "up",
+      "down",
+      "left",
+      "right",
+      "power"
+    ]
+  }
+}
