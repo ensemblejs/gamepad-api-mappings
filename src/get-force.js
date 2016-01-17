@@ -1,7 +1,8 @@
 'use strict';
 
-export function getLinkedForce (x, y, deadzone) {
-  let magnitude = Math.sqrt(x * x + y * y);
+export function getLinkedForce (coord, deadzone = 0) {
+  const angle = Math.atan(coord.y / coord.x);
+  let magnitude = Math.sqrt(coord.x * coord.x + coord.y * coord.y);
 
   if (magnitude <= deadzone) {
     return 0;
@@ -11,10 +12,13 @@ export function getLinkedForce (x, y, deadzone) {
     return 1;
   }
 
-  return magnitude;
+  return {
+    x: magnitude * Math.cos(angle),
+    y: magnitude * Math.sin(angle)
+  };
 }
 
-export function getForce (coord, deadzone) {
+export function getForce (coord, deadzone = 0) {
   let magnitude = Math.sqrt(coord * coord);
 
   if (magnitude <= deadzone) {
