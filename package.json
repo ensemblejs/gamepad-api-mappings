@@ -2,7 +2,7 @@
   "name": "gamepad-api-mappings",
   "version": "1.1.0",
   "description": "A package for mapping browser gamepad configurations",
-  "main": "lib/mapping.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ensemblejs/gamepad-api-mappings.git"
