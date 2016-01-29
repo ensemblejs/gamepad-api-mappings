@@ -1,36 +1,20 @@
 'use strict';
 
-export function getAxial (coord, deadzone = 0) {
-  let magnitude = Math.sqrt(coord * coord);
+export function axial (scalar, deadzone = 0) {
+  let magnitude = Math.sqrt(scalar * scalar);
 
   if (magnitude <= deadzone) {
     return 0;
   }
 
   if (magnitude > 1) {
-    return (coord < 0) ? -1 : 1;
+    return (scalar < 0) ? -1 : 1;
   }
 
-  return (coord < 0) ? -magnitude : magnitude;
+  return (scalar < 0) ? -magnitude : magnitude;
 }
 
-export function getScaledAxial (coord, deadzone = 0) {
-  let magnitude = Math.sqrt(coord * coord);
-
-  if (magnitude <= deadzone) {
-    return 0;
-  }
-
-  if (magnitude > 1) {
-    return (coord < 0) ? -1 : 1;
-  }
-
-  magnitude = (magnitude - deadzone) / (1 - deadzone);
-
-  return (coord < 0) ? -magnitude : magnitude;
-}
-
-export function getRadial (coord, deadzone = 0) {
+export function radial (coord, deadzone = 0) {
   const angle = Math.atan2(coord.y, coord.x);
   let magnitude = Math.sqrt(coord.x * coord.x + coord.y * coord.y);
 
@@ -48,22 +32,17 @@ export function getRadial (coord, deadzone = 0) {
   };
 }
 
-export function getScaledRadial (coord, deadzone = 0) {
-  const angle = Math.atan2(coord.y, coord.x);
-  let magnitude = Math.sqrt(coord.x * coord.x + coord.y * coord.y);
+export function rawResult (scalar) {
+  return scalar;
+}
 
-  if (magnitude <= deadzone) {
-    return {x:0, y:0};
+export function normaliseResult (scalar, deadzone = 0) {
+  if (scalar === 0) {
+    return scalar;
   }
 
-  if (magnitude > 1) {
-    magnitude = 1;
-  }
+  const absScalar = Math.abs(scalar);
+  const normalised = (absScalar - deadzone) / (1 - deadzone);
 
-  magnitude = (magnitude - deadzone) / (1 - deadzone);
-
-  return {
-    x: magnitude * Math.cos(angle),
-    y: magnitude * Math.sin(angle)
-  };
+  return scalar < 0 ? -normalised : normalised;
 }

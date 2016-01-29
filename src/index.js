@@ -1,29 +1,54 @@
 'use strict';
 
 export const getMapping = require('./get-mapping').getMapping;
-export const getAxial = require('./deadzones').getAxial;
-export const getScaledAxial = require('./deadzones').getScaledAxial;
-export const getRadial = require('./deadzones').getRadial;
-export const getScaledRadial = require('./deadzones').getScaledRadial;
 export const deadZones = require('./mapping.json').deadZones;
 
-const deadzoneOptions = {
-  'axial': function axial (stick, deadzone) {
-    return {
-      x: getAxial(stick.x, deadzone),
-      y: getAxial(stick.y, deadzone)
-    };
-  },
-  'scaled-axial': function scaledAxial (stick, deadzone) {
-    return {
-      x: getScaledAxial(stick.x, deadzone),
-      y: getScaledAxial(stick.y, deadzone)
-    };
-  },
-  'radial': getRadial,
-  'scaled-radial': getScaledRadial
+export const rawResult = require('./deadzones').rawResult;
+export const normaliseResult = require('./deadzones').normaliseResult;
+export const normalizeResult = require('./deadzones').normaliseResult;
+
+export const axial = require('./deadzones').axial;
+export const radial = require('./deadzones').radial;
+
+const postMapping = {
+  'raw': rawResult,
+  'normalised': normaliseResult,
+  'normalized': normalizeResult
 };
 
-export function pickDeadzone (option) {
-  return deadzoneOptions[option];
+export function axialScalar (coord, deadzone, post) {
+  return post(axial(coord, deadzone), deadzone);
+}
+
+export function axialVector (coord, deadzone, post) {
+  var vector = axialScalar(coord, deadzone);
+
+  return {
+    x: post(vector.x, deadzone),
+    y: post(vector.y, deadzone)
+  };
+}
+
+export function radialVector (coord, deadzone, post) {
+  var vector = radial(coord, deadzone);
+
+  return {
+    x: post(vector.x, deadzone),
+    y: post(vector.y, deadzone)
+  };
+}
+
+const algorithms = {
+  'axial': axialVector,
+  'radial': radialVector
+};
+
+function build (algorithm, mapper = postMapping.normalised) {
+  return function applyAlgorithmAndMapping (coord, deadzone) {
+    return algorithm(coord, deadzone, mapper);
+  } ;
+}
+
+export function getDeadzoneAlgorithm (algorithm, mapper) {
+  return build(algorithms[algorithm], postMapping[mapper]);
 }

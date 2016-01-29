@@ -1,19 +1,19 @@
 {
   "deadZones": {
     "Xbox 360 Wired Controller": {
-      "leftStick": 0.24,
-      "rightStick": 0.27,
-      "leftTrigger": 0.12,
-      "rightTrigger": 0.12
+      "left-stick": 0.24,
+      "right-stick": 0.27,
+      "left-trigger": 0.12,
+      "right-trigger": 0.12
     }
   },
   "Xbox 360 Wired Controller (STANDARD GAMEPAD Vendor: 045e Product: 028e)-standard": {
     "deadZone": "Xbox 360 Wired Controller",
     "axes": [
-      {"id": "leftStick", "prop": "x"},
-      {"id": "leftStick", "prop": "y"},
-      {"id": "rightStick", "prop": "x"},
-      {"id": "rightStick", "prop": "y"}
+      {"id": "left-stick", "prop": "x"},
+      {"id": "left-stick", "prop": "y"},
+      {"id": "right-stick", "prop": "x"},
+      {"id": "right-stick", "prop": "y"}
     ],
     "buttons": [
       "face-bottom",
@@ -38,12 +38,12 @@
   "45e-28e-Xbox 360 Wired Controller-": {
     "deadZone": "Xbox 360 Wired Controller",
     "axes": [
-      {"id": "leftStick", "prop": "x"},
-      {"id": "leftStick", "prop": "y"},
-      {"id": "leftTrigger"},
-      {"id": "rightStick", "prop": "x"},
-      {"id": "rightStick", "prop": "y"},
-      {"id": "rightTrigger"}
+      {"id": "left-stick", "prop": "x"},
+      {"id": "left-stick", "prop": "y"},
+      {"id": "left-trigger"},
+      {"id": "right-stick", "prop": "x"},
+      {"id": "right-stick", "prop": "y"},
+      {"id": "right-trigger"}
     ],
     "buttons": [
       "up",
@@ -66,10 +66,10 @@
   "standard": {
     "deadZone": "Xbox 360 Wired Controller",
     "axes": [
-      {"id": "leftStick", "prop": "x"},
-      {"id": "leftStick", "prop": "y"},
-      {"id": "rightStick", "prop": "x"},
-      {"id": "rightStick", "prop": "y"}
+      {"id": "left-stick", "prop": "x"},
+      {"id": "left-stick", "prop": "y"},
+      {"id": "right-stick", "prop": "x"},
+      {"id": "right-stick", "prop": "y"}
     ],
     "buttons": [
       "face-bottom",
