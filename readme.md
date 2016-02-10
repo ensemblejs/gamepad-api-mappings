@@ -47,6 +47,8 @@ let force2 = axialVector(gamepad.axes[0], deadZones['leftStick'], raw);
 console.log(force2.x, force2.y);
 ~~~
 
+![Axial](ensemblejs.github.com/gamepad-api-mappings/docs/axial.png)
+
 ### radial deadzones
 ~~~javascript
 import {radial, raw} from 'gamepad-api-mappings';
@@ -55,6 +57,8 @@ const coord = {x: gamepad.axes[0], y: gamepad.axes[1]};
 let force = radial(coord, deadZones['leftStick'], raw);
 console.log(force.x, force.y);
 ~~~
+
+![Radial](ensemblejs.github.com/gamepad-api-mappings/docs/radial.png)
 
 ### 8 Way Directional
 ~~~javascript
@@ -65,6 +69,8 @@ let force = way8(coord, deadZones['leftStick'], normalise);
 console.log(force.x, force.y);
 ~~~
 
+![8 ways](ensemblejs.github.com/gamepad-api-mappings/docs/8-ways.png)
+
 ### 4 Way Directional
 ~~~javascript
 import {way4, normalise} from 'gamepad-api-mappings';
@@ -74,7 +80,9 @@ let force = way4(coord, deadZones['leftStick'], normalise);
 console.log(force.x, force.y);
 ~~~
 
-### Veritical
+![4 ways](ensemblejs.github.com/gamepad-api-mappings/docs/4-ways.png)
+
+### Vertical
 ~~~javascript
 import {vertical, normalise} from 'gamepad-api-mappings';
 
@@ -82,6 +90,8 @@ const coord = {x: gamepad.axes[0], y: gamepad.axes[1]};
 let force = vertical(coord, deadZones['leftStick'], normalise);
 console.log(force.x, force.y);
 ~~~
+
+![Vertical](ensemblejs.github.com/gamepad-api-mappings/docs/vertical.png)
 
 ### Horizontal
 ~~~javascript
@@ -91,6 +101,8 @@ const coord = {x: gamepad.axes[0], y: gamepad.axes[1]};
 let force = horizontal(coord, deadZones['leftStick'], normalise);
 console.log(force.x, force.y);
 ~~~
+
+![Horiztonal](ensemblejs.github.com/gamepad-api-mappings/docs/horizontal.png)
 
 
 ## Post processing
@@ -118,3 +130,4 @@ console.log(myFuncPost.x, myFuncPost.y);          //(0.08, 0.24)
 ~~~
 
 An alias for `normalize` exists.
+

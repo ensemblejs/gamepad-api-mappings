@@ -83,15 +83,19 @@
 
   var x, y, c;
 
+  function round (v) {
+    return Math.round(v * 100) / 100;
+  }
+
   for (x = -1.0; x < 1.0; x += step) {
     for (y = -1.0; y < 1.0; y += step) {
       for (c = 0; c < charts.length; c += 1) {
         var chart = charts[c];
         chart.x.push(
-          chart.algorithm({x: x, y: y}, deadzone, chart.mapping).x
+          round(chart.algorithm({x: x, y: y}, deadzone, chart.mapping).x)
         );
         chart.y.push(
-          chart.algorithm({x: x, y: y}, deadzone, chart.mapping).y
+          round(chart.algorithm({x: x, y: y}, deadzone, chart.mapping).y)
         );
       }
     }
