@@ -1,8 +1,8 @@
 'use strict';
 
 var expect = require('expect');
-var raw = require('../lib/deadzones').rawResult;
-var normalise = require('../lib/deadzones').normaliseResult;
+var raw = require('../lib/deadzones').raw;
+var normalise = require('../lib/deadzones').normalise;
 
 describe('raw results', function () {
   it('should return the supplied value.', function () {

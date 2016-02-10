@@ -3,44 +3,38 @@
 export const getMapping = require('./get-mapping').getMapping;
 export const deadZones = require('./mapping.json').deadZones;
 
-export const rawResult = require('./deadzones').rawResult;
-export const normaliseResult = require('./deadzones').normaliseResult;
-export const normalizeResult = require('./deadzones').normaliseResult;
+export const raw = require('./deadzones').raw;
+export const normalise = require('./deadzones').normalise;
+export const normalize = require('./deadzones').normalise;
 
 export const axial = require('./deadzones').axial;
 export const radial = require('./deadzones').radial;
+export const way8 = require('./deadzones').way8;
+export const way4 = require('./deadzones').way4;
+export const vertical = require('./deadzones').vertical;
+export const horizontal = require('./deadzones').horizontal;
 
 const postMapping = {
-  'raw': rawResult,
-  'normalised': normaliseResult,
-  'normalized': normalizeResult
+  'raw': raw,
+  'normalised': normalise,
+  'normalized': normalize
 };
 
-export function axialScalar (coord, deadzone, post) {
-  return post(axial(coord, deadzone), deadzone);
-}
 
 export function axialVector (coord, deadzone, post) {
-  var vector = axialScalar(coord, deadzone);
-
   return {
-    x: post(vector.x, deadzone),
-    y: post(vector.y, deadzone)
-  };
-}
-
-export function radialVector (coord, deadzone, post) {
-  var vector = radial(coord, deadzone);
-
-  return {
-    x: post(vector.x, deadzone),
-    y: post(vector.y, deadzone)
+    x: axial(coord.x, deadzone, post),
+    y: axial(coord.y, deadzone, post),
   };
 }
 
 const algorithms = {
   'axial': axialVector,
-  'radial': radialVector
+  'radial': radial,
+  '8-way': way8,
+  '4-way': way4,
+  'horizontal': horizontal,
+  'vertical': vertical
 };
 
 function build (algorithm, mapper = postMapping.normalised) {

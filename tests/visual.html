@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="../bower_components/c3/c3.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    div {
+      margin: 0 2em;
+      padding: 0;
+      flex: 0 1 20%;
+    }
+  </style>
+</head>
+<body>
+  <div id="none_raw"></div>
+  <div id="none_normalise"></div>
+  <div id="axial_raw"></div>
+  <div id="axial_normalise"></div>
+  <div id="radial_raw"></div>
+  <div id="radial_normalise"></div>
+  <div id="way8_raw"></div>
+  <div id="way8_normalise"></div>
+  <div id="way4_raw"></div>
+  <div id="way4_normalise"></div>
+  <div id="vertical_raw"></div>
+  <div id="vertical_normalise"></div>
+  <div id="horizontal_raw"></div>
+  <div id="horizontal_normalise"></div>
+</body>
+<script src="../bower_components/d3/d3.min.js" charset="utf-8"></script>
+<script src="../bower_components/c3/c3.min.js"></script>
+<script>
+  'use strict';
+  var exports = {};
+</script>
+<script src="../lib/deadzones.js" charset="utf-8"></script>
+<script>
+  var raw = exports.raw;
+  var normalise = exports.normalise;
+
+  var none = function none (coord, deadzone, post) {
+    return {
+      x: post(coord.x),
+      y: post(coord.y)
+    };
+  };
+  var modAxial = function axial (coord, deadzone, post) {
+    return {
+      x: exports.axial(coord.x, deadzone, post),
+      y: exports.axial(coord.y, deadzone, post)
+    };
+  };
+
+  var algorithms = [none, modAxial, exports.radial, exports.way8, exports.way4, exports.vertical, exports.horizontal];
+  var mapping = [raw, normalise];
+
+  var charts = [];
+  var a, m;
+  for (a = 0; a < algorithms.length; a += 1) {
+    for (m = 0; m < mapping.length; m += 1) {
+      var name = algorithms[a].name + '_' + mapping[m].name;
+
+      charts.push({
+        algorithm: algorithms[a],
+        mapping: mapping[m],
+        c3: c3.generate({
+          bindto: '#' + name,
+          data: { columns: [], type: 'scatter' }
+        }),
+        x: [name + 'x'],
+        y: [name]
+      });
+    }
+  }
+
+  var deadzone = 0.25;
+  var step = 0.05;
+
+  var x, y, c;
+
+  for (x = -1.0; x < 1.0; x += step) {
+    for (y = -1.0; y < 1.0; y += step) {
+      for (c = 0; c < charts.length; c += 1) {
+        var chart = charts[c];
+        chart.x.push(
+          chart.algorithm({x: x, y: y}, deadzone, chart.mapping).x
+        );
+        chart.y.push(
+          chart.algorithm({x: x, y: y}, deadzone, chart.mapping).y
+        );
+      }
+    }
+  }
+
+  //make the horizontal (last two) charts look ok.
+  charts[charts.length - 2].x.push(1.0);
+  charts[charts.length - 2].y.push(1.0);
+  charts[charts.length - 2].x.push(-1.0);
+  charts[charts.length - 2].y.push(-1.0);
+
+  charts[charts.length - 1].x.push(1.0);
+  charts[charts.length - 1].y.push(1.0);
+  charts[charts.length - 1].x.push(-1.0);
+  charts[charts.length - 1].y.push(-1.0);
+
+
+  for (c = 0; c < charts.length; c += 1) {
+    var chart = charts[c];
+    var xs = {};
+    xs[chart.y[0]] = chart.x[0];
+
+    chart.c3.load({columns: [chart.x, chart.y], xs: xs});
+  }
+</script>
+</html>
