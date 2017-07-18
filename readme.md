@@ -17,7 +17,7 @@ npm i gamepad-api-mappings -S
 ~~~javascript
 import {getMapping} from 'gamepad-api-mappings';
 
-let gamepads = window().navigator.getGamepads();
+let gamepads = window.navigator.getGamepads();
 let gamepad = gamepads[0];
 
 let deviceMap = getMapping(gamepad.id, gamepad.mapping);
@@ -130,4 +130,3 @@ console.log(myFuncPost.x, myFuncPost.y);          //(0.08, 0.24)
 ~~~
 
 An alias for `normalize` exists.
-
