@@ -63,6 +63,33 @@
       "face-top"
     ]
   },
+  "Generic   USB  Joystick   (STANDARD GAMEPAD Vendor: 0079 Product: 0006)-standard": {
+    "description": "RetroLink gamecube Controller",
+    "deadZone": "Retrolink",
+    "axes": [
+      {"id": "right-stick", "prop": "x"},
+      {"id": "right-stick", "prop": "y"},
+      {"id": "left-stick", "prop": "x"},
+      {"id": "left-stick", "prop": "y"}
+    ],
+    "buttons": [
+      "face-right",
+      "face-top",
+      "face-left",
+      "face-bottom",
+      "left-shoulder",
+      "right-shoulder",
+      "left-shoulder-alt",
+      "unknown",
+      "unknown",
+      "home",
+      "unknown",
+      "up",
+      "down",
+      "left",
+      "right"
+    ]
+  },
   "standard": {
     "deadZone": "Xbox 360 Wired Controller",
     "axes": [
