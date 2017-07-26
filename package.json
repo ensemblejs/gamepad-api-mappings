@@ -1,6 +1,6 @@
 {
   "name": "gamepad-api-mappings",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "A package for mapping browser gamepad configurations",
   "main": "lib/index.js",
   "repository": {
