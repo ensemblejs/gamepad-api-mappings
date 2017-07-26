@@ -1,0 +1,19 @@
+{
+  "name": "demo-gamepad-api-mappings",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A demo project for gamepad-api-mappings",
+  "scripts": {
+    "start": "webpack --config ./play.webpack.config.js"
+  },
+  "devDependencies": {
+    "gamepad-api-mappings": "latest",
+    "webpack": "^3.3.0"
+  },
+  "author": "Gaspard Beernaert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ensemblejs/gamepad-api-mappings/issues"
+  },
+  "homepage": "https://github.com/ensemblejs/gamepad-api-mappings"
+}
