@@ -6,7 +6,7 @@
       "left-trigger": 0.12,
       "right-trigger": 0.12
     },
-    "small": {
+    "RetroLink": {
       "left-stick": 0.2,
       "right-stick": 0.2,
       "left-trigger": 0.1,
@@ -71,7 +71,7 @@
   },
   "Generic   USB  Joystick   (STANDARD GAMEPAD Vendor: 0079 Product: 0006)-standard": {
     "description": "RetroLink gamecube Controller",
-    "deadZone": "small",
+    "deadZone": "RetroLink",
     "axes": [
       {"id": "right-stick", "prop": "x"},
       {"id": "right-stick", "prop": "y"},
