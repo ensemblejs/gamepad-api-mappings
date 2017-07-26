@@ -5,6 +5,12 @@
       "right-stick": 0.27,
       "left-trigger": 0.12,
       "right-trigger": 0.12
+    },
+    "small": {
+      "left-stick": 0.2,
+      "right-stick": 0.2,
+      "left-trigger": 0.1,
+      "right-trigger": 0.1
     }
   },
   "Xbox 360 Wired Controller (STANDARD GAMEPAD Vendor: 045e Product: 028e)-standard": {
@@ -61,6 +67,34 @@
       "face-right",
       "face-left",
       "face-top"
+    ]
+  },
+  "Generic   USB  Joystick   (STANDARD GAMEPAD Vendor: 0079 Product: 0006)-standard": {
+    "description": "RetroLink gamecube Controller",
+    "deadZone": "small",
+    "axes": [
+      {"id": "right-stick", "prop": "x"},
+      {"id": "right-stick", "prop": "y"},
+      {"id": "left-stick", "prop": "x"},
+      {"id": "left-stick", "prop": "y"}
+    ],
+    "buttons": [
+      "face-top",
+      "face-right",
+      "face-bottom",
+      "face-left",
+      "left-trigger",
+      "right-trigger",
+      "right-shoulder",
+      "unknown",
+      "unknown",
+      "home",
+      "unknown",
+      "unknown",
+      "up",
+      "down",
+      "left",
+      "right"
     ]
   },
   "standard": {
