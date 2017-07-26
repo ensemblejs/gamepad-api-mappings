@@ -13,8 +13,7 @@
   "scripts": {
     "pretest": "babel src --out-dir lib --copy-files",
     "test": "mocha tests",
-    "prepublish": "babel src --out-dir lib --copy-files",
-    "demo": "cd demo && ../node_modules/.bin/webpack --config ./demo.webpack.config.js"
+    "prepublish": "babel src --out-dir lib --copy-files"
   },
   "babel": {
     "presets": [
@@ -26,8 +25,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-register": "^6.3.13",
     "expect": "^1.13.4",
-    "mocha": "^2.4.5",
-    "webpack": "^3.3.0"
+    "mocha": "^2.4.5"
   },
   "keywords": [
     "gamepad",
